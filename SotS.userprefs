@@ -1,10 +1,17 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\player\PlayerMove.cs">
     <Files>
       <File FileName="Assets\script\floatUp.cs" Line="13" Column="39" />
       <File FileName="Assets\script\spawner.cs" Line="8" Column="25" />
       <File FileName="Assets\script\player\PlayerMove.cs" Line="55" Column="28" />
+=======
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\test.cs">
+    <Files>
+      <File FileName="Assets\test.cs" Line="15" Column="2" />
+>>>>>>> 135880a0d00c2ec0db377e7ed6b1df6845f6e58e
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
