@@ -40,6 +40,240 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: bagmancharacterhit_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 921
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_1
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 921
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_2
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 921
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_3
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 921
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 818
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_5
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 818
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_6
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 818
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_7
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 818
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 715
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_9
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 715
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_10
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 715
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_11
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 715
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 612
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_13
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 612
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_14
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 612
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_15
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 612
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 509
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_17
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 509
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_18
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 509
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_19
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 509
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 406
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_21
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 406
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_22
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 406
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_23
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 406
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 303
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: bagmancharacterhit_25
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 303
+        width: 105
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
   spritePackingTag: 
   userData: 

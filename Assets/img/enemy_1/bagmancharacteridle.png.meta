@@ -45,243 +45,180 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 409
+        y: 408
         width: 65
-        height: 103
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: bagmancharacteridle_1
       rect:
         serializedVersion: 2
         x: 65
-        y: 409
+        y: 408
         width: 65
-        height: 103
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: bagmancharacteridle_2
       rect:
         serializedVersion: 2
         x: 130
-        y: 409
+        y: 408
         width: 65
-        height: 103
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: bagmancharacteridle_3
       rect:
         serializedVersion: 2
         x: 195
-        y: 409
+        y: 408
         width: 65
-        height: 103
+        height: 104
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
     - name: bagmancharacteridle_4
       rect:
         serializedVersion: 2
         x: 260
-        y: 409
+        y: 408
         width: 65
-        height: 103
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: bagmancharacteridle_5
       rect:
         serializedVersion: 2
         x: 325
-        y: 409
+        y: 408
         width: 65
-        height: 103
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: bagmancharacteridle_6
       rect:
         serializedVersion: 2
         x: 390
-        y: 409
+        y: 408
         width: 65
-        height: 103
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: bagmancharacteridle_7
       rect:
         serializedVersion: 2
         x: 0
-        y: 306
+        y: 304
         width: 65
-        height: 103
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: bagmancharacteridle_8
       rect:
         serializedVersion: 2
         x: 65
-        y: 306
+        y: 304
         width: 65
-        height: 103
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: bagmancharacteridle_9
       rect:
         serializedVersion: 2
         x: 130
-        y: 306
+        y: 304
         width: 65
-        height: 103
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: bagmancharacteridle_10
       rect:
         serializedVersion: 2
         x: 195
-        y: 306
+        y: 304
         width: 65
-        height: 103
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: bagmancharacteridle_11
       rect:
         serializedVersion: 2
         x: 260
-        y: 306
+        y: 304
         width: 65
-        height: 103
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: bagmancharacteridle_12
       rect:
         serializedVersion: 2
         x: 325
-        y: 306
+        y: 304
         width: 65
-        height: 103
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: bagmancharacteridle_13
       rect:
         serializedVersion: 2
         x: 390
-        y: 306
+        y: 304
         width: 65
-        height: 103
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: bagmancharacteridle_14
       rect:
         serializedVersion: 2
         x: 0
-        y: 203
+        y: 200
         width: 65
-        height: 103
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: bagmancharacteridle_15
       rect:
         serializedVersion: 2
         x: 65
-        y: 203
+        y: 200
         width: 65
-        height: 103
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: bagmancharacteridle_16
       rect:
         serializedVersion: 2
         x: 130
-        y: 203
+        y: 200
         width: 65
-        height: 103
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: bagmancharacteridle_17
       rect:
         serializedVersion: 2
         x: 195
-        y: 203
+        y: 200
         width: 65
-        height: 103
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: bagmancharacteridle_18
       rect:
         serializedVersion: 2
         x: 260
-        y: 203
+        y: 200
         width: 65
-        height: 103
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: bagmancharacteridle_19
       rect:
         serializedVersion: 2
         x: 325
-        y: 203
+        y: 200
         width: 65
-        height: 103
-      alignment: 0
-      pivot: {x: 0, y: 0}
-    - name: bagmancharacteridle_20
-      rect:
-        serializedVersion: 2
-        x: 390
-        y: 203
-        width: 65
-        height: 103
-      alignment: 0
-      pivot: {x: 0, y: 0}
-    - name: bagmancharacteridle_21
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 100
-        width: 65
-        height: 103
-      alignment: 0
-      pivot: {x: 0, y: 0}
-    - name: bagmancharacteridle_22
-      rect:
-        serializedVersion: 2
-        x: 65
-        y: 100
-        width: 65
-        height: 103
-      alignment: 0
-      pivot: {x: 0, y: 0}
-    - name: bagmancharacteridle_23
-      rect:
-        serializedVersion: 2
-        x: 130
-        y: 100
-        width: 65
-        height: 103
-      alignment: 0
-      pivot: {x: 0, y: 0}
-    - name: bagmancharacteridle_24
-      rect:
-        serializedVersion: 2
-        x: 195
-        y: 100
-        width: 65
-        height: 103
-      alignment: 0
-      pivot: {x: 0, y: 0}
-    - name: bagmancharacteridle_25
-      rect:
-        serializedVersion: 2
-        x: 260
-        y: 100
-        width: 65
-        height: 103
-      alignment: 0
-      pivot: {x: 0, y: 0}
-    - name: bagmancharacteridle_26
-      rect:
-        serializedVersion: 2
-        x: 325
-        y: 100
-        width: 65
-        height: 103
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
   spritePackingTag: 
