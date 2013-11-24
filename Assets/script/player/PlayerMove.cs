@@ -10,9 +10,11 @@ public class PlayerMove : WalkingChar {
 	bool grdcheck1;
 	bool grdcheck2;
 	bool grdcheck3;
+	private Transform dustSpawn;
 	
 	void Start(){
 		//dust.Emit(transform.position,Vector3.left,1,1,new Color(0.5F, 1, 0.5F, 1));
+		dustSpawn = transform.Find("dustSpawn");
 	}
 	
 	void Update (){
@@ -79,7 +81,7 @@ public class PlayerMove : WalkingChar {
 			Vector2 partSpeed = new Vector2(-rigidbody2D.velocity.x*10,0 );
 			int randomPart = Random.Range(0,particles.Length);
 			if(speed>1){
-				GameObject newPart = GameObject.Instantiate(particles[randomPart],transform.position,Quaternion.identity) as GameObject;
+				GameObject newPart = GameObject.Instantiate(particles[randomPart],dustSpawn.position,Quaternion.identity) as GameObject;
 				newPart.rigidbody2D.AddForce(partSpeed);
 			}
 		}

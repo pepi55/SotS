@@ -43,7 +43,7 @@ public class enemyGroundMove :WalkingChar {
 				} else {
 					Walk (-1);
 				}
-			} else if (distPlayer < 0.8f) {
+			} else if (distPlayer < 1.0f) {
 				anim.SetTrigger ("hit");
 				hitExitTimer = 0.75f;
 			} else {
