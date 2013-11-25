@@ -6,7 +6,7 @@ public class enemyGroundMove :WalkingChar {
 	private Animator anim;
 	private bool facingLeft = true;
 	private Transform playerTrans;
-	private int agroDistance = 10;
+	private int agroDistance = 5;
 	
 	public bool walkLeft = true;
 	float hitExitTimer = 0;
@@ -26,18 +26,30 @@ public class enemyGroundMove :WalkingChar {
 			anim.SetBool("walking",true);
 		}
 
+
 		//flip check
-		if(speed>0.1f && facingLeft){
-			facingLeft = false;
-			Flip(false);
+		if(distPlayer>agroDistance){
+			if(speed>0.1f && facingLeft){
+				facingLeft = false;
+				Flip(false);
+			}
+			if (speed<-0.1f && !facingLeft){
+				facingLeft = true;
+				Flip(true);
+			}
+		}else{
+			if(playerTrans.position.x>transform.position.x){
+				facingLeft = false;
+				Flip(false);
+			}else if(playerTrans.position.x<transform.position.x){
+				facingLeft = true;
+				Flip(true);
+			}
 		}
-		if (speed<-0.1f && !facingLeft){
-			facingLeft = true;
-			Flip(true);
-		}
+
 		//movement
 		if (hitExitTimer < 0) {
-			if (distPlayer > 5) {
+			if (distPlayer > agroDistance) {
 				if (walkLeft) {
 					Walk (1);
 				} else {
@@ -46,6 +58,8 @@ public class enemyGroundMove :WalkingChar {
 			} else if (distPlayer < 1.0f) {
 				anim.SetTrigger ("hit");
 				hitExitTimer = 0.75f;
+				Debug.Log(Physics2D.OverlapCircle(rigidbody2D.transform.position,1,(1 << LayerMask.NameToLayer("Player"))));
+				Debug.DrawLine(transform.position,transform.position+new Vector3(1,0,0));
 			} else {
 				if (playerTrans.position.x > transform.position.x) {
 					Walk (3.5f);
