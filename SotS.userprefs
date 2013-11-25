@@ -1,13 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\cameraMove.cs">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\enemyGroundMove.cs">
     <Files>
-      <File FileName="Assets\script\enemyGroundMove.cs" Line="15" Column="3" />
-      <File FileName="Assets\script\player\PlayerMove.cs" Line="17" Column="40" />
-      <File FileName="Assets\script\movement\Walking.cs" Line="1" Column="1" />
-      <File FileName="Assets\script\movement\Flying.cs" Line="1" Column="1" />
-      <File FileName="Assets\script\player\dustParticle.cs" Line="1" Column="1" />
-      <File FileName="Assets\script\cameraMove.cs" Line="20" Column="103" />
+      <File FileName="Assets\script\enemyGroundMove.cs" Line="44" Column="56" />
+      <File FileName="Assets\script\player\PlayerMove.cs" Line="34" Column="55" />
+      <File FileName="Assets\script\movement\Walking.cs" Line="25" Column="50" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
