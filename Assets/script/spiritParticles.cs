@@ -2,13 +2,14 @@
 using System.Collections;
 
 public class spiritParticles : MonoBehaviour {
-	public Transform target;
-	private float maxSpeed = 10;
-	private float mass = 20;
+	private Transform target;
+	public float maxSpeed = 10;
+	public float mass = 20;
 
 	// Use this for initialization
 	void Start () {
 		rigidbody.velocity	=	new Vector3(0,1,1) * maxSpeed;
+		target = GameObject.FindWithTag ("Player").transform;
 	}
 	
 	// Update is called once per frame

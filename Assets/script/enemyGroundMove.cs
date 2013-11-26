@@ -99,16 +99,6 @@ public class enemyGroundMove :WalkingChar {
 		ApplySlowdown();
 		ApplyMaxMoveSpeed();
 	}
-
-	private void Flip(bool left){
-		Vector3 newScale = sprite.transform.localScale;
-		if(left){
-			newScale.x = 1;
-		}else{
-			newScale.x = -1;
-		}
-		sprite.transform.localScale = newScale;
-	}
 	
 	private void OnTriggerEnter2D(Collider2D col){
 		//Debug.Log( col.collider.collider2D.name);
@@ -122,7 +112,7 @@ public class enemyGroundMove :WalkingChar {
 		}
 	}
 
-	void OnDestroy () {
+	public void OnDestroy () {
 		Resources.Load("spiritParticle");
 	}
 }

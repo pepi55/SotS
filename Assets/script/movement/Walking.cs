@@ -24,5 +24,15 @@ public class WalkingChar :Living
 	public void Walk(float s){
 		rigidbody2D.AddForce(new Vector2(s*moveHorForce,0));
 	}
+	
+	public void Flip(bool left){
+		Vector3 newScale = transform.localScale;
+		if(left){
+			newScale.x = 1;
+		}else{
+			newScale.x = -1;
+		}
+		transform.localScale = newScale;
+	}
 }
 

@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class PlayerMove : WalkingChar {
+	private SpriteRenderer sprite;
 	public int jumpForce = 800;
 	public GameObject[] particles;
 	public float groundCheckLenght;
@@ -13,23 +14,22 @@ public class PlayerMove : WalkingChar {
 	private bool grdcheck3;
 	private Transform dustSpawn;
 	private Animator anim;
+	private float animExitTimer;
 	
 	new private void Start(){
 		//dust.Emit(transform.position,Vector3.left,1,1,new Color(0.5F, 1, 0.5F, 1));
 		dustSpawn = transform.Find("dustSpawn");
 		anim = GetComponent<Animator>();
+		sprite =GetComponent<SpriteRenderer>();
 		//call Start methode in the base class
 		base.Start();
 		base.spawnHealtBar();
 	}
 	
 	private void Update (){
-		bool attack = Input.GetButton("Fire1");
 		//bool spaceKey = Input.GetKey (KeyCode.Space);
 		bool spaceKey = Input.GetButtonDown("Jump");
-		//attack
 
-		//print(attack);
 		//check if can jump
 		Vector3 pos = transform.position;
 		grdcheck1 = Physics2D.Linecast(transform.position,(pos+Vector3.down*groundCheckLenght),
@@ -52,11 +52,10 @@ public class PlayerMove : WalkingChar {
 		Debug.DrawLine((pos-rayDisplacment),(pos-rayDisplacment)+(Vector3.down*groundCheckLenght));
 	}
 	
-	int jumpNum;
-	
 	private void FixedUpdate () {
 		//get imput
 		float h = Input.GetAxis("Horizontal");
+		bool attackKey = Input.GetButton("Fire1");
 		//move horizontal
 		Walk(h);
 		ApplyMaxMoveSpeed();
@@ -69,17 +68,30 @@ public class PlayerMove : WalkingChar {
 		
 		//jump
 		if(canJump){
-			jumpNum++;
-			//Debug.Log("jump"+jumpNum);
 			rigidbody2D.AddForce(new Vector2(0,jumpForce));
 			canJump = false;
 		}
 		SpawnParticles();
 		//animate
-		Debug.Log(rigidbody2D.velocity.x);
-		anim.SetFloat("Speed",rigidbody2D.velocity.x);
-		//anim.speed = Mathf.Abs(rigidbody2D.velocity.x/2);
-
+		if(animExitTimer < 0){
+			if(attackKey){
+				anim.SetTrigger ("hit");
+				animExitTimer = 0.75f;
+			}
+			anim.SetFloat("Speed",rigidbody2D.velocity.x);
+			float currentHorSpeed = rigidbody2D.velocity.x;
+			if(currentHorSpeed>0.1f){
+				Flip(false);
+				anim.SetBool("walking",true);
+			}else if (currentHorSpeed<-0.1f){
+				Flip(true);
+				anim.SetBool("walking",true);
+			}else{
+				anim.SetBool("walking",false);
+			}
+		}else{
+			animExitTimer -= Time.deltaTime;
+		}
 	}
 
 	private void OnCollisionEnter2D(Collision2D col){
@@ -97,7 +109,6 @@ public class PlayerMove : WalkingChar {
 			}
 		}
 	}
-
 }
 
 
