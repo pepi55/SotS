@@ -76,10 +76,10 @@ public class PlayerMove : WalkingChar {
 		}
 		SpawnParticles();
 		//animate
-		if(rigidbody2D.velocity.x > 0.1 || rigidbody2D.velocity.x < -0.1){
-			anim.SetBool("walking",true);
-			anim.speed = Mathf.Abs(rigidbody2D.velocity.x/2);
-		}
+		Debug.Log(rigidbody2D.velocity.x);
+		anim.SetFloat("Speed",rigidbody2D.velocity.x);
+		//anim.speed = Mathf.Abs(rigidbody2D.velocity.x/2);
+
 	}
 
 	private void OnCollisionEnter2D(Collision2D col){

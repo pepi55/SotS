@@ -6,7 +6,8 @@ public class cameraMove : MonoBehaviour {
 	private Transform playerTrans;
 	// Use this for initialization
 	void Start () {
-		playerTrans = GameObject.FindWithTag ("Player").transform;
+		playerTrans = GameObject.Find ( "Player").transform;
+		Debug.Log(playerTrans);
 	}
 	
 	// Update is called once per frame
