@@ -121,4 +121,8 @@ public class enemyGroundMove :WalkingChar {
 			walkLeft = !walkLeft;
 		}
 	}
+
+	void OnDestroy () {
+		Resources.Load("spiritParticle");
+	}
 }
