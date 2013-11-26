@@ -1,10 +1,37 @@
 ﻿<Properties>
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\player\PlayerMove.cs">
     <Files>
       <File FileName="Assets\script\enemyGroundMove.cs" Line="1" Column="1" />
       <File FileName="Assets\script\player\PlayerMove.cs" Line="82" Column="3" />
       <File FileName="Assets\script\cameraMove.cs" Line="9" Column="36" />
+=======
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\enemyGroundMove.cs">
+=======
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\player\PlayerMove.cs">
+    <Files>
+      <File FileName="Assets\script\player\PlayerMove.cs" Line="81" Column="51" />
+=======
+<<<<<<< HEAD
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\spiritParticles.cs">
+>>>>>>> 64f72643a17f4e3de8232468e0558e07a3abfcb9
+    <Files>
+      <File FileName="Assets\script\enemyGroundMove.cs" Line="107" Column="28" />
+      <File FileName="Assets\script\spiritParticles.cs" Line="25" Column="61" />
+      <File FileName="Assets\script\spirit.cs" Line="1" Column="1" />
+<<<<<<< HEAD
+      <File FileName="..\..\..\Desktop\SeekBehaviourScript.cs" Line="49" Column="1" />
+=======
+>>>>>>> 086a02dd33feecb2faff34dfb55a17458d0421fd
+>>>>>>> c3b85de19095699606fbbe26442652e4d582f724
+>>>>>>> 64f72643a17f4e3de8232468e0558e07a3abfcb9
+>>>>>>> 6540aa1e04e8b8ff13b11ab07d564afd69f7faad
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
