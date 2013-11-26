@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class WalkingChar :MonoBehaviour
+public class WalkingChar :Living
 {
 	public float slowDownHorGround = 0.1f;
 	public int maxSpeed = 4;
