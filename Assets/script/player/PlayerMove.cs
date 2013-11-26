@@ -54,7 +54,7 @@ public class PlayerMove : WalkingChar {
 	
 	private void FixedUpdate () {
 		//get imput
-		float h = Input.GetAxis("Horizontal");
+		float h = InputSpeed;
 		bool attackKey = Input.GetButton("Fire1");
 		//move horizontal
 		Walk(h);
@@ -107,6 +107,22 @@ public class PlayerMove : WalkingChar {
 				GameObject newPart = GameObject.Instantiate(particles[randomPart],dustSpawn.position,Quaternion.identity) as GameObject;
 				newPart.rigidbody2D.AddForce(partSpeed);
 			}
+		}
+	}
+
+	private float InputSpeed{
+		get{
+			#if UNITY_IPHONE || UNITY_ANDROID
+			Debug.Log ("android");
+			if(Input.touchCount > 0 && Input.touchCount < 2){
+				return ((Input.GetTouch(0).position.x /Screen.width)*2)-1;
+			}else{
+				return 0;
+			}
+			#else
+			return Input.GetAxis("Horizontal");
+			#endif
+			
 		}
 	}
 }
