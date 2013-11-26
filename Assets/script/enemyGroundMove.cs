@@ -2,22 +2,26 @@
 using System.Collections;
 
 public class enemyGroundMove :WalkingChar {
-
+	private SpriteRenderer sprite;
 	private Animator anim;
 	private bool facingLeft = true;
 	private Transform playerTrans;
 	private GameObject player;
 	private int agroDistance = 5;
-	
+	private Object hitObject;
 	public bool walkLeft = true;
 	float hitExitTimer = 0;
-	void Start () {
+	bool hitForceToApply = false;
+	new private void Start () {
+		sprite =GetComponent<SpriteRenderer>();
 		anim = GetComponent<Animator>();
 		playerTrans = GameObject.FindWithTag ("Player").transform;
 		player = GameObject.FindGameObjectWithTag("Player");
+		base.Start();
+		base.spawnHealtBar();
 	}
 
-	void FixedUpdate () {
+	private void FixedUpdate () {
 	    // get distance player
 		float distPlayer = Vector3.Distance(playerTrans.position, transform.position);
 		float xDistance = playerTrans.position.x - transform.position.x;
@@ -61,17 +65,11 @@ public class enemyGroundMove :WalkingChar {
 			} else if (xDistance < 1.0f && xDistance > -1.0f && distPlayer < 2) {
 				anim.SetTrigger ("hit");
 				hitExitTimer = 0.75f;
-				Object hitObject = Physics2D.OverlapCircle(rigidbody2D.transform.position,1,(1 << LayerMask.NameToLayer("Player")));
-				if(hitObject){
-					if(hitObject.name=="Player"){
-						if(xDistance>0){
-							player.rigidbody2D.AddForce(new Vector2(500,0));
-						}else{
-							player.rigidbody2D.AddForce(new Vector2(-500,0));
-						}
-					}
-				}
+				hitObject = Physics2D.OverlapCircle(rigidbody2D.transform.position,1,(1 << LayerMask.NameToLayer("Player")));
 				//hitObject. .AddForce(new Vector2(transform.position.x-playerTrans.position.x),0);
+				if(hitObject){
+					hitForceToApply = true;
+				}
 				Debug.DrawLine(transform.position,transform.position+new Vector3(1,0,0));
 			} else {
 				if (playerTrans.position.x > transform.position.x) {
@@ -83,27 +81,42 @@ public class enemyGroundMove :WalkingChar {
 		} else {
 			hitExitTimer-=Time.deltaTime;
 		}
+		//apply hitforce player
+		if(hitExitTimer < 0.4){
+			if(hitForceToApply){
+				hitForceToApply = false;
+				if(hitObject.name=="Player"){
+					player.GetComponent<PlayerMove>().ChangeHealt(-5);
+					if(xDistance>0){
+						player.rigidbody2D.AddForce(new Vector2(500,0));
+					}else{
+						player.rigidbody2D.AddForce(new Vector2(-500,0));
+					}
+				}
+			}
+		}
+
 		ApplySlowdown();
 		ApplyMaxMoveSpeed();
 	}
 
-	void Flip(bool left){
-		Vector3 newScale = transform.localScale;
+	private void Flip(bool left){
+		Vector3 newScale = sprite.transform.localScale;
 		if(left){
 			newScale.x = 1;
 		}else{
 			newScale.x = -1;
 		}
-		transform.localScale = newScale;
+		sprite.transform.localScale = newScale;
 	}
 	
-	void OnTriggerEnter2D(Collider2D col){
+	private void OnTriggerEnter2D(Collider2D col){
 		//Debug.Log( col.collider.collider2D.name);
 		if(col.name == "enemyBariar"){
 			walkLeft = !walkLeft;
 		}
 	}
-	void OnCollisionEnter2D(Collision2D col){
+	private void OnCollisionEnter2D(Collision2D col){
 		if(col.collider.collider2D.tag == "enemy"){
 			walkLeft = !walkLeft;
 		}

@@ -2,22 +2,28 @@
 using System.Collections;
 
 public class PlayerMove : WalkingChar {
-	private bool canJump;
 	public int jumpForce = 800;
 	public GameObject[] particles;
-	Vector3 rayDisplacment = new Vector3(0.4f,0,0);
-	bool grounded;
-	bool grdcheck1;
-	bool grdcheck2;
-	bool grdcheck3;
+	public float groundCheckLenght;
+	private bool canJump;
+	private Vector3 rayDisplacment = new Vector3(0.4f,0,0);
+	private bool grounded;
+	private bool grdcheck1;
+	private bool grdcheck2;
+	private bool grdcheck3;
 	private Transform dustSpawn;
+	private Animator anim;
 	
-	void Start(){
+	new private void Start(){
 		//dust.Emit(transform.position,Vector3.left,1,1,new Color(0.5F, 1, 0.5F, 1));
 		dustSpawn = transform.Find("dustSpawn");
+		anim = GetComponent<Animator>();
+		//call Start methode in the base class
+		base.Start();
+		base.spawnHealtBar();
 	}
 	
-	void Update (){
+	private void Update (){
 		bool attack = Input.GetButton("Fire1");
 		//bool spaceKey = Input.GetKey (KeyCode.Space);
 		bool spaceKey = Input.GetButtonDown("Jump");
@@ -26,11 +32,11 @@ public class PlayerMove : WalkingChar {
 		//print(attack);
 		//check if can jump
 		Vector3 pos = transform.position;
-		grdcheck1 = Physics2D.Linecast(transform.position,(pos+Vector3.down*0.6f),
+		grdcheck1 = Physics2D.Linecast(transform.position,(pos+Vector3.down*groundCheckLenght),
 		        (1 << LayerMask.NameToLayer("Level"))|(1 << LayerMask.NameToLayer("NPC")));
-		grdcheck2 = Physics2D.Linecast(transform.position,((pos+rayDisplacment)+Vector3.down*0.6f),
+		grdcheck2 = Physics2D.Linecast(transform.position,((pos+rayDisplacment)+Vector3.down*groundCheckLenght),
 				(1 << LayerMask.NameToLayer("Level"))|(1 << LayerMask.NameToLayer("NPC")));
-		grdcheck3 = Physics2D.Linecast(transform.position,((pos-rayDisplacment)+Vector3.down*0.6f),
+		grdcheck3 = Physics2D.Linecast(transform.position,((pos-rayDisplacment)+Vector3.down*groundCheckLenght),
 		        (1 << LayerMask.NameToLayer("Level"))|(1 << LayerMask.NameToLayer("NPC")));
 		if(grdcheck1||grdcheck2||grdcheck3){
 			grounded = true;
@@ -41,14 +47,14 @@ public class PlayerMove : WalkingChar {
 		}else{
 			grounded = false;
 		}
-		Debug.DrawLine(pos,transform.position+(Vector3.down*0.6f));
-		Debug.DrawLine((pos+rayDisplacment),(pos+rayDisplacment)+(Vector3.down*0.6f));
-		Debug.DrawLine((pos-rayDisplacment),(pos-rayDisplacment)+(Vector3.down*0.6f));
+		Debug.DrawLine(pos,transform.position+(Vector3.down*groundCheckLenght));
+		Debug.DrawLine((pos+rayDisplacment),(pos+rayDisplacment)+(Vector3.down*groundCheckLenght));
+		Debug.DrawLine((pos-rayDisplacment),(pos-rayDisplacment)+(Vector3.down*groundCheckLenght));
 	}
 	
 	int jumpNum;
 	
-	void FixedUpdate () {
+	private void FixedUpdate () {
 		//get imput
 		float h = Input.GetAxis("Horizontal");
 		//move horizontal
@@ -69,6 +75,11 @@ public class PlayerMove : WalkingChar {
 			canJump = false;
 		}
 		SpawnParticles();
+		//animate
+		if(rigidbody2D.velocity.x > 0.1 || rigidbody2D.velocity.x < -0.1){
+			anim.SetBool("walking",true);
+			anim.speed = Mathf.Abs(rigidbody2D.velocity.x/2);
+		}
 	}
 
 	private void OnCollisionEnter2D(Collision2D col){
