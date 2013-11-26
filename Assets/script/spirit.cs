@@ -29,7 +29,6 @@ public class spirit : WalkingChar {
 	void FixedUpdate () {
 		ApplyMaxMoveSpeed();
 		ApplySlowdown();
-		print(inTrigger);
 		if (inTrigger) {
 			Walk(countdown);
 		} else {
@@ -45,7 +44,6 @@ public class spirit : WalkingChar {
 
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.tag == "walkpath") {
-			print (col.tag);
 			inTrigger = true;
 		} 
 	}
