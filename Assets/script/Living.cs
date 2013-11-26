@@ -31,7 +31,7 @@ public class Living : MonoBehaviour {
 			thisBar.transform.localScale = new Vector3(barScale,1,1);
 		}
 		if(gameObject.name=="Player"){
-			thisBar.transform.localScale = new Vector3(Health/100.0f,1,1);
+			lifeUI.transform.localScale = new Vector3(Health/100.0f,1,1);
 		}
 	}
 }
