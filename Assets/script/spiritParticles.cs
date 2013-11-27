@@ -8,7 +8,7 @@ public class spiritParticles : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		rigidbody.velocity	=	new Vector3(0,1,1) * maxSpeed;
+		rigidbody2D.velocity = new Vector2(0, 1) * maxSpeed;
 		target = GameObject.FindWithTag ("Player").transform;
 	}
 	
@@ -18,11 +18,14 @@ public class spiritParticles : MonoBehaviour {
 	}
 
 	void Seek () {
-		Vector3 followSpeed = target.position - rigidbody.position;
-		Vector3 velocity = followSpeed * maxSpeed;
-		Vector3 steering = velocity - rigidbody.velocity;
+		float followSpeedY = target.position.y - rigidbody2D.transform.position.y;
+		float followSpeedX = target.position.x - rigidbody2D.transform.position.x;
+
+		Vector2 followSpeed = new Vector2(followSpeedX, followSpeedY);
+		Vector2 velocity = followSpeed * maxSpeed;
+		Vector2 steering = velocity - rigidbody2D.velocity;
 
 		followSpeed.Normalize();
-		rigidbody.velocity = rigidbody.velocity + steering / mass;
+		rigidbody2D.velocity = rigidbody2D.velocity + steering / mass;
 	}
 }
