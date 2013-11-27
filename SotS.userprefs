@@ -1,5 +1,6 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+<<<<<<< HEAD
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\movement\follow.cs">
     <Files>
       <File FileName="Assets\script\enemyGroundMove.cs" Line="1" Column="1" />
@@ -9,6 +10,17 @@
       <File FileName="Assets\script\enemyGroundMove.cs" Line="1" Column="1" />
       <File FileName="Assets\script\movement\follow.cs" Line="9" Column="85" />
       <File FileName="Assets\script\movement\Walking.cs" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\spiritParticles.cs">
+    <Files>
+      <File FileName="Assets\script\spiritParticles.cs" Line="25" Column="32" />
+      <File FileName="Assets\script\enemyGroundMove.cs" Line="66" Column="1" />
+      <File FileName="Assets\script\player\PlayerMove.cs" Line="52" Column="94" />
+      <File FileName="Assets\script\Living.cs" Line="38" Column="1" />
+      <File FileName="Assets\script\spiritParticles.cs" Line="25" Column="32" />
+      <File FileName="Assets\script\movement\follow.cs" Line="15" Column="1" />
+      <File FileName="Assets\script\movement\Walking.cs" Line="39" Column="1" />
+>>>>>>> 3b3228197078a37cb85701090a7b4bfb37e5dffe
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
