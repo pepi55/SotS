@@ -9,10 +9,12 @@ public class Living : MonoBehaviour {
 	private SpriteRenderer lifeUI;
 	private Transform thisBar;
 	private GameObject Bar;
+	float widthBar;
 	public void Start () {
 		HealthStart = Health;
 		if(gameObject.name=="Player"){
 			lifeUI = GameObject.Find("LifeBarFill").GetComponent<SpriteRenderer>();
+			//widthBar = lifeUI.sprite.textureRect.width;
 		}
 	}
 

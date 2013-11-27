@@ -23,7 +23,7 @@ TextureImporter:
   textureFormat: -1
   maxTextureSize: 1024
   textureSettings:
-    filterMode: -1
+    filterMode: 0
     aniso: 1
     mipBias: -1
     wrapMode: 1
@@ -45,387 +45,333 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 897
-        width: 156
-        height: 127
+        y: 896
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_1
       rect:
         serializedVersion: 2
-        x: 156
-        y: 897
-        width: 156
-        height: 127
+        x: 158
+        y: 896
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_2
       rect:
         serializedVersion: 2
-        x: 312
-        y: 897
-        width: 156
-        height: 127
+        x: 316
+        y: 896
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_3
       rect:
         serializedVersion: 2
-        x: 468
-        y: 897
-        width: 156
-        height: 127
+        x: 474
+        y: 896
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_4
       rect:
         serializedVersion: 2
-        x: 624
-        y: 897
-        width: 156
-        height: 127
+        x: 632
+        y: 896
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_5
       rect:
         serializedVersion: 2
-        x: 780
-        y: 897
-        width: 156
-        height: 127
+        x: 790
+        y: 896
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 770
-        width: 156
-        height: 127
+        y: 768
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_7
       rect:
         serializedVersion: 2
-        x: 156
-        y: 770
-        width: 156
-        height: 127
+        x: 158
+        y: 768
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_8
       rect:
         serializedVersion: 2
-        x: 312
-        y: 770
-        width: 156
-        height: 127
+        x: 316
+        y: 768
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_9
       rect:
         serializedVersion: 2
-        x: 468
-        y: 770
-        width: 156
-        height: 127
+        x: 474
+        y: 768
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_10
       rect:
         serializedVersion: 2
-        x: 624
-        y: 770
-        width: 156
-        height: 127
+        x: 632
+        y: 768
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_11
       rect:
         serializedVersion: 2
-        x: 780
-        y: 770
-        width: 156
-        height: 127
+        x: 790
+        y: 768
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_12
       rect:
         serializedVersion: 2
         x: 0
-        y: 643
-        width: 156
-        height: 127
+        y: 640
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_13
       rect:
         serializedVersion: 2
-        x: 156
-        y: 643
-        width: 156
-        height: 127
+        x: 158
+        y: 640
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_14
       rect:
         serializedVersion: 2
-        x: 312
-        y: 643
-        width: 156
-        height: 127
+        x: 316
+        y: 640
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_15
       rect:
         serializedVersion: 2
-        x: 468
-        y: 643
-        width: 156
-        height: 127
+        x: 474
+        y: 640
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_16
       rect:
         serializedVersion: 2
-        x: 624
-        y: 643
-        width: 156
-        height: 127
+        x: 632
+        y: 640
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_17
       rect:
         serializedVersion: 2
-        x: 780
-        y: 643
-        width: 156
-        height: 127
+        x: 790
+        y: 640
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_18
       rect:
         serializedVersion: 2
         x: 0
-        y: 516
-        width: 156
-        height: 127
+        y: 512
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_19
       rect:
         serializedVersion: 2
-        x: 156
-        y: 516
-        width: 156
-        height: 127
+        x: 158
+        y: 512
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_20
       rect:
         serializedVersion: 2
-        x: 312
-        y: 516
-        width: 156
-        height: 127
+        x: 316
+        y: 512
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_21
       rect:
         serializedVersion: 2
-        x: 468
-        y: 516
-        width: 156
-        height: 127
+        x: 474
+        y: 512
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_22
       rect:
         serializedVersion: 2
-        x: 624
-        y: 516
-        width: 156
-        height: 127
+        x: 632
+        y: 512
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_23
       rect:
         serializedVersion: 2
-        x: 780
-        y: 516
-        width: 156
-        height: 127
+        x: 790
+        y: 512
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_24
       rect:
         serializedVersion: 2
         x: 0
-        y: 389
-        width: 156
-        height: 127
+        y: 384
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_25
       rect:
         serializedVersion: 2
-        x: 156
-        y: 389
-        width: 156
-        height: 127
+        x: 158
+        y: 384
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_26
       rect:
         serializedVersion: 2
-        x: 312
-        y: 389
-        width: 156
-        height: 127
+        x: 316
+        y: 384
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_27
       rect:
         serializedVersion: 2
-        x: 468
-        y: 389
-        width: 156
-        height: 127
+        x: 474
+        y: 384
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_28
       rect:
         serializedVersion: 2
-        x: 624
-        y: 389
-        width: 156
-        height: 127
+        x: 632
+        y: 384
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_29
       rect:
         serializedVersion: 2
-        x: 780
-        y: 389
-        width: 156
-        height: 127
+        x: 790
+        y: 384
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_30
       rect:
         serializedVersion: 2
         x: 0
-        y: 262
-        width: 156
-        height: 127
+        y: 256
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_31
       rect:
         serializedVersion: 2
-        x: 156
-        y: 262
-        width: 156
-        height: 127
+        x: 158
+        y: 256
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_32
       rect:
         serializedVersion: 2
-        x: 312
-        y: 262
-        width: 156
-        height: 127
+        x: 316
+        y: 256
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_33
       rect:
         serializedVersion: 2
-        x: 468
-        y: 262
-        width: 156
-        height: 127
+        x: 474
+        y: 256
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_34
       rect:
         serializedVersion: 2
-        x: 624
-        y: 262
-        width: 156
-        height: 127
+        x: 632
+        y: 256
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_35
       rect:
         serializedVersion: 2
-        x: 780
-        y: 262
-        width: 156
-        height: 127
+        x: 790
+        y: 256
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
     - name: tikiwarriorenemy_36
       rect:
         serializedVersion: 2
         x: 0
-        y: 135
-        width: 156
-        height: 127
-      alignment: 0
-      pivot: {x: 0, y: 0}
-    - name: tikiwarriorenemy_37
-      rect:
-        serializedVersion: 2
-        x: 156
-        y: 135
-        width: 156
-        height: 127
-      alignment: 0
-      pivot: {x: 0, y: 0}
-    - name: tikiwarriorenemy_38
-      rect:
-        serializedVersion: 2
-        x: 312
-        y: 135
-        width: 156
-        height: 127
-      alignment: 0
-      pivot: {x: 0, y: 0}
-    - name: tikiwarriorenemy_39
-      rect:
-        serializedVersion: 2
-        x: 468
-        y: 135
-        width: 156
-        height: 127
-      alignment: 0
-      pivot: {x: 0, y: 0}
-    - name: tikiwarriorenemy_40
-      rect:
-        serializedVersion: 2
-        x: 624
-        y: 135
-        width: 156
-        height: 127
-      alignment: 0
-      pivot: {x: 0, y: 0}
-    - name: tikiwarriorenemy_41
-      rect:
-        serializedVersion: 2
-        x: 780
-        y: 135
-        width: 156
-        height: 127
-      alignment: 0
-      pivot: {x: 0, y: 0}
-    - name: tikiwarriorenemy_42
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 8
-        width: 156
-        height: 127
+        y: 128
+        width: 158
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
   spritePackingTag: 

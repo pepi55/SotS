@@ -1,0 +1,648 @@
+fileFormatVersion: 2
+guid: 28ff57a93ee1f7f4a902c3a0b69dbe43
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 0
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: shamanplayer_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1919
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_1
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 1919
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_2
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 1919
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_3
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 1919
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_4
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 1919
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_5
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 1919
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_6
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 1919
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_7
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 1919
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_8
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 1919
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1790
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_10
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 1790
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_11
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 1790
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_12
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 1790
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_13
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 1790
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_14
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 1790
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_15
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 1790
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_16
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 1790
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_17
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 1790
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1661
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_19
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 1661
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_20
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 1661
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_21
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 1661
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_22
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 1661
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_23
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 1661
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_24
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 1661
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_25
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 1661
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_26
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 1661
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1532
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_28
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 1532
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_29
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 1532
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_30
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 1532
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_31
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 1532
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_32
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 1532
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_33
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 1532
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_34
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 1532
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_35
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 1532
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1403
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_37
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 1403
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_38
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 1403
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_39
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 1403
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_40
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 1403
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_41
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 1403
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_42
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 1403
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_43
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 1403
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_44
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 1403
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1274
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_46
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 1274
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_47
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 1274
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_48
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 1274
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_49
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 1274
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_50
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 1274
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_51
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 1274
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_52
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 1274
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_53
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 1274
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1145
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_55
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 1145
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_56
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 1145
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_57
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 1145
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_58
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 1145
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_59
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 1145
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_60
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 1145
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_61
+      rect:
+        serializedVersion: 2
+        x: 1449
+        y: 1145
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_62
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 1145
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_63
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1016
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_64
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 1016
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_65
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 1016
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: shamanplayer_66
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 1016
+        width: 207
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 
