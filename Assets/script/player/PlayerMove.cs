@@ -69,17 +69,23 @@ public class PlayerMove : WalkingChar {
 		//jump
 		if(canJump){
 			rigidbody2D.AddForce(new Vector2(0,jumpForce));
+			animExitTimer = 0.1f;
+			anim.SetBool ("jumping",true);
+			anim.SetTrigger ("jump");
 			canJump = false;
 		}
 		SpawnParticles();
 		//animate
-		if(animExitTimer < 0){
-			if(attackKey){
-				anim.SetTrigger ("hit");
-				animExitTimer = 0.75f;
+		if(attackKey && animExitTimer < 0){
+			anim.SetTrigger ("hit");
+			animExitTimer = 0.75f;
+		}
+		float currentHorSpeed = rigidbody2D.velocity.x;
+		if(animExitTimer < 0 && grounded){
+			if(anim.GetBool("jumping")){
+				anim.SetBool ("jumping",false);
 			}
-			anim.SetFloat("Speed",rigidbody2D.velocity.x);
-			float currentHorSpeed = rigidbody2D.velocity.x;
+			anim.SetFloat("Speed",currentHorSpeed);
 			if(currentHorSpeed>0.1f){
 				Flip(false);
 				anim.SetBool("walking",true);
@@ -90,6 +96,13 @@ public class PlayerMove : WalkingChar {
 				anim.SetBool("walking",false);
 			}
 		}else{
+			if(anim.GetBool("jumping")){
+				if(currentHorSpeed>0.1f){
+					Flip(false);
+				}else if (currentHorSpeed<-0.1f){
+					Flip(true);
+				}
+			}
 			animExitTimer -= Time.deltaTime;
 		}
 	}
