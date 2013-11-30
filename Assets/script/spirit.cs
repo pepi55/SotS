@@ -7,12 +7,10 @@ public class spirit : WalkingChar {
 	bool timing;
 	bool inTrigger = false;
 
-	Transform target;
 	float countdown = 0;
 	float distance;
 
 	new void Start () {
-		target = GameObject.FindWithTag("spirit").transform;
 		StartTimer();
 	}
 
