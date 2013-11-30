@@ -25,9 +25,6 @@ public class spirit : WalkingChar {
 				timing = false;
 			}
 		}
-
-		distance = (target.transform.position - transform.position).magnitude;
-		Debug.Log(distance);
 	}
 
 	void FixedUpdate () {
