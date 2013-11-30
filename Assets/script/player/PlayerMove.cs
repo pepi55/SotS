@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class PlayerMove : WalkingChar {
@@ -6,6 +6,12 @@ public class PlayerMove : WalkingChar {
 	public int jumpForce = 800;
 	public GameObject[] particles;
 	public float groundCheckLenght;
+	//attack
+	public float attackAreaHeight = 1;
+	public float attackAreaWidth = 2;
+	public float attackX = .5f;
+	private bool attackToDo = false;
+
 	private bool canJump;
 	private Vector3 rayDisplacment = new Vector3(0.4f,0,0);
 	private bool grounded;
@@ -15,6 +21,9 @@ public class PlayerMove : WalkingChar {
 	private Transform dustSpawn;
 	private Animator anim;
 	private float animExitTimer;
+	private GameObject hitObject;
+	private Collider2D hitCollider;
+	private float currentHorSpeed;
 	
 	new private void Start(){
 		//dust.Emit(transform.position,Vector3.left,1,1,new Color(0.5F, 1, 0.5F, 1));
@@ -23,6 +32,7 @@ public class PlayerMove : WalkingChar {
 		sprite =GetComponent<SpriteRenderer>();
 		//call Start methode in the base class
 		base.Start();
+
 		base.spawnHealtBar();
 	}
 	
@@ -53,6 +63,7 @@ public class PlayerMove : WalkingChar {
 	}
 	
 	private void FixedUpdate () {
+		currentHorSpeed = rigidbody2D.velocity.x;
 		//get imput
 		float h = InputSpeed;
 		bool attackKey = Input.GetButton("Fire1");
@@ -65,22 +76,22 @@ public class PlayerMove : WalkingChar {
 				ApplySlowdown();
 			}
 		}
-		
-		//jump
+
 		if(canJump){
+			//jump
 			rigidbody2D.AddForce(new Vector2(0,jumpForce));
 			animExitTimer = 0.1f;
 			anim.SetBool ("jumping",true);
 			anim.SetTrigger ("jump");
 			canJump = false;
 		}
-		SpawnParticles();
-		//animate
 		if(attackKey && animExitTimer < 0){
-			anim.SetTrigger ("hit");
-			animExitTimer = 0.75f;
+			attackStart();
 		}
-		float currentHorSpeed = rigidbody2D.velocity.x;
+		if(attackToDo && animExitTimer<0.3f){
+			attackHit();
+		}
+
 		if(animExitTimer < 0 && grounded){
 			if(anim.GetBool("jumping")){
 				anim.SetBool ("jumping",false);
@@ -105,20 +116,20 @@ public class PlayerMove : WalkingChar {
 			}
 			animExitTimer -= Time.deltaTime;
 		}
-	}
-
-	private void OnCollisionEnter2D(Collision2D col){
-		//Debug.Log( col.collider.collider2D.name);
+		SpawnParticles();
 	}
 	
 	private void SpawnParticles(){
 		if(grounded){
-			float speed = Mathf.Abs( rigidbody2D.velocity.x );
-			Vector2 partSpeed = new Vector2(-rigidbody2D.velocity.x*10,0 );
-			int randomPart = Random.Range(0,particles.Length);
-			if(speed>1){
-				GameObject newPart = GameObject.Instantiate(particles[randomPart],dustSpawn.position,Quaternion.identity) as GameObject;
-				newPart.rigidbody2D.AddForce(partSpeed);
+			int random = Random.Range(0,3);
+			if(random==1){
+				float speed = Mathf.Abs( rigidbody2D.velocity.x );
+				Vector2 partSpeed = new Vector2(-rigidbody2D.velocity.x*2,0 );
+				int randomPart = Random.Range(0,particles.Length);
+				if(speed>1){
+					GameObject newPart = GameObject.Instantiate(particles[randomPart],dustSpawn.position,Quaternion.identity) as GameObject;
+					newPart.rigidbody2D.AddForce(partSpeed);
+				}
 			}
 		}
 	}
@@ -136,6 +147,69 @@ public class PlayerMove : WalkingChar {
 			return Input.GetAxis("Horizontal");
 			#endif
 			
+		}
+	}
+
+	private void attackStart(){
+		anim.SetTrigger ("hit");
+		animExitTimer = 0.75f;
+		attackToDo = true;
+	}
+
+	private void attackHit(){
+		attackToDo = false;
+		bool foundHit = true;
+		//	calculate hit area
+		while(foundHit){
+			float hitLeftTopX = 0;
+			float hitLeftTopY = transform.position.y + (attackAreaHeight/2);
+			float hitBottomRightX = 0;
+			float hitBottomRightY = transform.position.y -(attackAreaHeight/2);
+			if(transform.localScale.x > 0){
+				hitBottomRightX = transform.position.x - attackAreaWidth - attackX;
+				hitLeftTopX = transform.position.x - attackX;
+			}else if (transform.localScale.x < 0){
+				hitBottomRightX = transform.position.x + attackAreaWidth + attackX;
+				hitLeftTopX = transform.position.x + attackX;
+			}
+			Vector2 hitTopLeft = new Vector2(hitLeftTopX,hitLeftTopY);
+			Vector2 hitBottomRight = new Vector2(hitBottomRightX,hitBottomRightY);
+			//hit
+			hitCollider = Physics2D.OverlapArea(hitTopLeft,hitBottomRight,(1 << LayerMask.NameToLayer("attackColider")));
+			if(hitCollider!=null){
+				//delete enemy in area
+				GameObject hitObject = hitCollider.gameObject.transform.parent.gameObject;
+				GameObject.Destroy(hitObject);
+			}else{
+				//exit while
+				foundHit = false;
+			}
+			//draw hit area
+			if(true){
+				if(transform.localScale.x > 0){
+					Debug.DrawLine(transform.position + new Vector3(0-attackX,(attackAreaHeight/2),0),
+					               transform.position + new Vector3(-attackAreaWidth-attackX,(attackAreaHeight/2),0),
+					               Color.red,
+					               1
+					               );
+					Debug.DrawLine(transform.position + new Vector3(0-attackX,-(attackAreaHeight/2),0),
+					               transform.position + new Vector3(-attackAreaWidth-attackX,-(attackAreaHeight/2),0),
+					               Color.red,
+					               1
+					               );
+				}else if (transform.localScale.x < 0){
+					Debug.DrawLine(transform.position + new Vector3(0+attackX,(attackAreaHeight/2),0),
+					               transform.position + new Vector3(attackAreaWidth+attackX,(attackAreaHeight/2),0),
+					               Color.red,
+					               1
+					               );
+					Debug.DrawLine(transform.position + new Vector3(0+attackX,-(attackAreaHeight/2),0),
+					               transform.position + new Vector3(attackAreaWidth+attackX,-(attackAreaHeight/2),0),
+					               Color.red,
+					               1
+					               );
+				}
+			}
 		}
 	}
 }

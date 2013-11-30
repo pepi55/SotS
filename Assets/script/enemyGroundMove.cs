@@ -15,8 +15,8 @@ public class enemyGroundMove :WalkingChar {
 	new private void Start () {
 		sprite =GetComponent<SpriteRenderer>();
 		anim = GetComponent<Animator>();
-		playerTrans = GameObject.FindWithTag ("Player").transform;
-		player = GameObject.FindGameObjectWithTag("Player");
+		playerTrans = GameObject.Find ("Player").transform;
+		player = GameObject.Find("Player");
 		base.Start();
 		base.spawnHealtBar();
 	}
