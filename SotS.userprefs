@@ -1,15 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\Living.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\enemyGroundMove.cs">
     <Files>
-      <File FileName="Assets\script\player\PlayerMove.cs" Line="180" Column="42" />
-      <File FileName="Assets\script\Living.cs" Line="34" Column="31" />
-      <File FileName="Assets\script\spiritParticles.cs" Line="31" Column="2" />
-      <File FileName="Assets\script\movement\Walking.cs" Line="39" Column="1" />
-      <File FileName="Assets\script\movement\follow.cs" Line="16" Column="1" />
-      <File FileName="Assets\script\spirit.cs" Line="15" Column="2" />
-      <File FileName="Assets\script\player\dustParticle.cs" Line="23" Column="14" />
-      <File FileName="Assets\script\enemyGroundMove.cs" Line="104" Column="34" />
+      <File FileName="Assets\script\deathAnimation.cs" Line="9" Column="3" />
+      <File FileName="Assets\script\particles\dustParticle.cs" Line="13" Column="12" />
+      <File FileName="Assets\script\enemyGroundMove.cs" Line="105" Column="54" />
+      <File FileName="Assets\script\movement\spiritParticles.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -101,6 +101,8 @@ public class enemyGroundMove :WalkingChar {
 
 		if(GetComponent<Living>().Health<0){
 			GameObject.Instantiate( Resources.Load("spiritParticle"),transform.position,Quaternion.identity);
+			GameObject deathEffect = (GameObject)GameObject.Instantiate( Resources.Load("deathSmall"),transform.position,Quaternion.identity);
+			deathEffect.rigidbody2D.AddForce(new Vector2(0,150));
 			GameObject.Destroy(gameObject);
 		}
 	}
