@@ -22,11 +22,10 @@ public class PlayerMove : WalkingChar {
 	private Animator anim;
 	private float animExitTimer;
 	private GameObject hitObject;
-	private Collider2D hitCollider;
+	private Collider2D[] hitColliders;
 	private float currentHorSpeed;
 	
 	new private void Start(){
-		//dust.Emit(transform.position,Vector3.left,1,1,new Color(0.5F, 1, 0.5F, 1));
 		dustSpawn = transform.Find("dustSpawn");
 		anim = GetComponent<Animator>();
 		sprite =GetComponent<SpriteRenderer>();
@@ -37,10 +36,9 @@ public class PlayerMove : WalkingChar {
 	}
 	
 	private void Update (){
-		//bool spaceKey = Input.GetKey (KeyCode.Space);
 		bool spaceKey = Input.GetButtonDown("Jump");
 
-		//check if can jump
+		//check if can jump and if on ground
 		Vector3 pos = transform.position;
 		grdcheck1 = Physics2D.Linecast(transform.position,(pos+Vector3.down*groundCheckLenght),
 		        (1 << LayerMask.NameToLayer("Level"))|(1 << LayerMask.NameToLayer("NPC")));
@@ -57,6 +55,7 @@ public class PlayerMove : WalkingChar {
 		}else{
 			grounded = false;
 		}
+		//draw ground check lines
 		Debug.DrawLine(pos,transform.position+(Vector3.down*groundCheckLenght));
 		Debug.DrawLine((pos+rayDisplacment),(pos+rayDisplacment)+(Vector3.down*groundCheckLenght));
 		Debug.DrawLine((pos-rayDisplacment),(pos-rayDisplacment)+(Vector3.down*groundCheckLenght));
@@ -160,57 +159,53 @@ public class PlayerMove : WalkingChar {
 		attackToDo = false;
 		bool foundHit = true;
 		//	calculate hit area
-		while(foundHit){
-			float hitLeftTopX = 0;
-			float hitLeftTopY = transform.position.y + (attackAreaHeight/2);
-			float hitBottomRightX = 0;
-			float hitBottomRightY = transform.position.y -(attackAreaHeight/2);
+		//while(foundHit){
+		float hitLeftTopX = 0;
+		float hitLeftTopY = transform.position.y + (attackAreaHeight/2);
+		float hitBottomRightX = 0;
+		float hitBottomRightY = transform.position.y -(attackAreaHeight/2);
+		if(transform.localScale.x > 0){
+			hitBottomRightX = transform.position.x - attackAreaWidth - attackX;
+			hitLeftTopX = transform.position.x - attackX;
+		}else if (transform.localScale.x < 0){
+			hitBottomRightX = transform.position.x + attackAreaWidth + attackX;
+			hitLeftTopX = transform.position.x + attackX;
+		}
+		Vector2 hitTopLeft = new Vector2(hitLeftTopX,hitLeftTopY);
+		Vector2 hitBottomRight = new Vector2(hitBottomRightX,hitBottomRightY);
+		//hit
+		hitColliders = Physics2D.OverlapAreaAll(hitTopLeft,hitBottomRight,(1 << LayerMask.NameToLayer("attackColider")));
+		for (int i = 0; i < hitColliders.Length; i++){
+			GameObject hitObject = hitColliders[i].gameObject.transform.parent.gameObject;
+			hitObject.GetComponent<Living>().Hit();
+		}
+		//draw hit area
+		if(true){
 			if(transform.localScale.x > 0){
-				hitBottomRightX = transform.position.x - attackAreaWidth - attackX;
-				hitLeftTopX = transform.position.x - attackX;
+				Debug.DrawLine(transform.position + new Vector3(0-attackX,(attackAreaHeight/2),0),
+				               transform.position + new Vector3(-attackAreaWidth-attackX,(attackAreaHeight/2),0),
+				               Color.red,
+				               1
+				               );
+				Debug.DrawLine(transform.position + new Vector3(0-attackX,-(attackAreaHeight/2),0),
+				               transform.position + new Vector3(-attackAreaWidth-attackX,-(attackAreaHeight/2),0),
+				               Color.red,
+				               1
+				               );
 			}else if (transform.localScale.x < 0){
-				hitBottomRightX = transform.position.x + attackAreaWidth + attackX;
-				hitLeftTopX = transform.position.x + attackX;
-			}
-			Vector2 hitTopLeft = new Vector2(hitLeftTopX,hitLeftTopY);
-			Vector2 hitBottomRight = new Vector2(hitBottomRightX,hitBottomRightY);
-			//hit
-			hitCollider = Physics2D.OverlapArea(hitTopLeft,hitBottomRight,(1 << LayerMask.NameToLayer("attackColider")));
-			if(hitCollider!=null){
-				//delete enemy in area
-				GameObject hitObject = hitCollider.gameObject.transform.parent.gameObject;
-				GameObject.Destroy(hitObject);
-			}else{
-				//exit while
-				foundHit = false;
-			}
-			//draw hit area
-			if(true){
-				if(transform.localScale.x > 0){
-					Debug.DrawLine(transform.position + new Vector3(0-attackX,(attackAreaHeight/2),0),
-					               transform.position + new Vector3(-attackAreaWidth-attackX,(attackAreaHeight/2),0),
-					               Color.red,
-					               1
-					               );
-					Debug.DrawLine(transform.position + new Vector3(0-attackX,-(attackAreaHeight/2),0),
-					               transform.position + new Vector3(-attackAreaWidth-attackX,-(attackAreaHeight/2),0),
-					               Color.red,
-					               1
-					               );
-				}else if (transform.localScale.x < 0){
-					Debug.DrawLine(transform.position + new Vector3(0+attackX,(attackAreaHeight/2),0),
-					               transform.position + new Vector3(attackAreaWidth+attackX,(attackAreaHeight/2),0),
-					               Color.red,
-					               1
-					               );
-					Debug.DrawLine(transform.position + new Vector3(0+attackX,-(attackAreaHeight/2),0),
-					               transform.position + new Vector3(attackAreaWidth+attackX,-(attackAreaHeight/2),0),
-					               Color.red,
-					               1
-					               );
-				}
+				Debug.DrawLine(transform.position + new Vector3(0+attackX,(attackAreaHeight/2),0),
+				               transform.position + new Vector3(attackAreaWidth+attackX,(attackAreaHeight/2),0),
+				               Color.red,
+				               1
+				               );
+				Debug.DrawLine(transform.position + new Vector3(0+attackX,-(attackAreaHeight/2),0),
+				               transform.position + new Vector3(attackAreaWidth+attackX,-(attackAreaHeight/2),0),
+				               Color.red,
+				               1
+				               );
 			}
 		}
+		//}
 	}
 }
 

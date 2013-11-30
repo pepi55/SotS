@@ -9,12 +9,10 @@ public class spirit : WalkingChar {
 
 	float countdown = 0;
 
-	// Use this for initialization
-	void Start () {
+	new void Start () {
 		StartTimer();
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		if (timing) {
 			countdown -= Time.deltaTime / 2;

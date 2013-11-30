@@ -21,7 +21,6 @@ public class dustParticle : MonoBehaviour {
 		deltaAlpha = Delta[state]/maxScale;
 		if(rigidbody2D.velocity.x >0){
 			xFlip = 1;
-			Debug.Log("scale");
 		}else{
 			xFlip = -1;
 		}

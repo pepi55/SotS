@@ -98,6 +98,11 @@ public class enemyGroundMove :WalkingChar {
 
 		ApplySlowdown();
 		ApplyMaxMoveSpeed();
+
+		if(GetComponent<Living>().Health<0){
+			GameObject.Instantiate( Resources.Load("spiritParticle"),transform.position,Quaternion.identity);
+			GameObject.Destroy(gameObject);
+		}
 	}
 	
 	private void OnTriggerEnter2D(Collider2D col){
@@ -110,9 +115,5 @@ public class enemyGroundMove :WalkingChar {
 		if(col.collider.collider2D.tag == "enemy"){
 			walkLeft = !walkLeft;
 		}
-	}
-
-	public void OnDestroy () {
-		Resources.Load("spiritParticle");
 	}
 }
