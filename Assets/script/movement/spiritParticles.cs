@@ -9,7 +9,7 @@ public class spiritParticles : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rigidbody2D.velocity = new Vector2(0, 1) * maxSpeed;
-		target = GameObject.FindWithTag ("Player").transform;
+		target = GameObject.FindWithTag("Player").transform;
 	}
 	
 	// Update is called once per frame
