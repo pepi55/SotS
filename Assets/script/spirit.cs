@@ -6,6 +6,7 @@ public class spirit : WalkingChar {
 
 	bool timing;
 	bool inTrigger = false;
+	bool scale = false;
 
 	float countdown = 0;
 	float distance;
@@ -27,6 +28,8 @@ public class spirit : WalkingChar {
 			transform.localScale = new Vector3(countdown, countdown + 2, 1);
 			if (countdown <= 1) {
 				timing = false;
+			} else {
+				timing = true;
 			}
 		}
 
@@ -38,10 +41,21 @@ public class spirit : WalkingChar {
 			
 			distance = Vector3.Distance(positionTarget, positionThis);
 
-			if (distance < 5) {
-				countdown += 2;
+			if (distance < 3) {
+				timing = false;
+				scale = true;
+
 				Destroy(spiritParticle);
 			}
+		}
+
+		if (scale) {
+			//countdown += Time.deltaTime / 2;
+			//transform.localScale = new Vector3(countdown, countdown + 2, 1);
+			countdown += 3;
+
+			timing = true;
+			scale = false;
 		}
 	}
 
