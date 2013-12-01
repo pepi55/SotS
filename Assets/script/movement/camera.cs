@@ -10,7 +10,6 @@ public class camera : MonoBehaviour
 	public float smoothTime = 0.1f;
 	public bool cameraFollowX = true;
 	public bool cameraFollowY = true;
-	public bool cameraFollowHeight = false;
 	public float cameraHeight = 2.5f;
 	public Vector2 velocity;
 	
