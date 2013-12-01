@@ -8,9 +8,14 @@ public class spirit : WalkingChar {
 	bool inTrigger = false;
 
 	float countdown = 0;
+	Vector2 diff;
 	float distance;
+	Transform target;
 
 	new void Start () {
+		target = GameObject.FindWithTag("spiritParticle").transform;
+		diff = new Vector2(transform.position.x - target.position.x, transform.position.y - target.position.y); //(this.transform.position - target.position).magnitude;
+		distance = Mathf.Sqrt(Mathf.Pow(diff.x, 2f) + Mathf.Pow(diff.y, 2f));
 		StartTimer();
 	}
 
@@ -23,6 +28,8 @@ public class spirit : WalkingChar {
 				timing = false;
 			}
 		}
+
+		Debug.Log(distance);
 	}
 
 	void FixedUpdate () {
@@ -30,10 +37,7 @@ public class spirit : WalkingChar {
 		ApplySlowdown();
 		if (inTrigger) {
 			Walk(countdown);
-		} else {
-			//Walk(-1);
 		}
-		//print("In trigger: " + inTrigger);
 	}
 
 	void StartTimer () {
