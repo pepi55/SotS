@@ -7,6 +7,8 @@ public class WalkingChar :Living
 	public float slowDownHorGround = 0.1f;
 	public int maxSpeed = 4;
 	public int moveHorForce = 20;
+	
+	//private float 
 
 	//slowdown
 	public void ApplySlowdown ()

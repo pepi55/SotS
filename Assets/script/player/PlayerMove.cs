@@ -177,6 +177,14 @@ public class PlayerMove : WalkingChar {
 		hitColliders = Physics2D.OverlapAreaAll(hitTopLeft,hitBottomRight,(1 << LayerMask.NameToLayer("attackColider")));
 		for (int i = 0; i < hitColliders.Length; i++){
 			GameObject hitObject = hitColliders[i].gameObject.transform.parent.gameObject;
+			float hitObjPosX = hitObject.transform.position.x;
+			float thisObjPosX = transform.position.x;
+			float distHitObjX = thisObjPosX - hitObjPosX; 
+			if(distHitObjX>0){
+				hitObject.rigidbody2D.AddForce(new Vector2(-1000,0));
+			}else{
+				hitObject.rigidbody2D.AddForce(new Vector2(1000,0));
+			}
 			hitObject.GetComponent<Living>().Hit();
 		}
 		//draw hit area
