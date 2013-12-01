@@ -1,9 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\spirit.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\movement\camera.cs">
     <Files>
+      <File FileName="SotS.sln" Line="1" Column="1" />
+      <File FileName="Assets\script\movement\camera.cs" Line="39" Column="27" />
       <File FileName="Assets\script\spirit.cs" Line="29" Column="1" />
-      <File FileName="Assets\script\movement\spiritParticles.cs" Line="12" Column="55" />
+      <File FileName="Assets\script\movement\spiritParticles.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
