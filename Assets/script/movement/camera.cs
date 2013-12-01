@@ -4,17 +4,17 @@ using System.Collections;
 public class camera : MonoBehaviour
 {
 	
-	public GameObject cameraTarget; // object to look at or follow
-	public GameObject player; // player object for moving
+	public GameObject cameraTarget;
+	public GameObject player;
 	
-	public float smoothTime = 0.1f; // time for dampen
-	public bool cameraFollowX = true; // camera follows on horizontal
-	public bool cameraFollowY = true; // camera follows on vertical
-	public bool cameraFollowHeight = true; // camera follow CameraTarget object height
-	public float cameraHeight = 2.5f; // height of camera adjustable
-	public Vector2 velocity; // speed of camera movement
+	public float smoothTime = 0.1f;
+	public bool cameraFollowX = true;
+	public bool cameraFollowY = true;
+	public bool cameraFollowHeight = false;
+	public float cameraHeight = 2.5f;
+	public Vector2 velocity;
 	
-	private Transform thisTransform; // camera Transform
+	private Transform thisTransform;
 	
 	// Use this for initialization
 	void Start()
@@ -31,11 +31,7 @@ public class camera : MonoBehaviour
 		}
 		if (cameraFollowY)
 		{
-			// to do
-		}
-		if (!cameraFollowX & cameraFollowHeight)
-		{
-			// to do
+			thisTransform.position = new Vector3(thisTransform.position.x, Mathf.SmoothDamp(thisTransform.position.y, cameraTarget.transform.position.y, ref velocity.y, smoothTime), thisTransform.position.z);
 		}
 	}
 }
