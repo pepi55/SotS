@@ -10,8 +10,8 @@ public class enemyGroundMove :WalkingChar {
 	private int agroDistance = 5;
 	private Object hitObject;
 	public bool walkLeft = true;
-	float hitExitTimer = 0;
-	bool hitForceToApply = false;
+	private float hitExitTimer = 0;
+	private bool hitForceToApply = false;
 	new private void Start () {
 		sprite =GetComponent<SpriteRenderer>();
 		anim = GetComponent<Animator>();
