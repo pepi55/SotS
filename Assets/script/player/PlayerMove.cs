@@ -91,26 +91,26 @@ public class PlayerMove : WalkingChar {
 		if(attackToDo && animExitTimer<0.2f){
 			attackHit();
 		}
-
+		float loclXScale = transform.localScale.x;
 		if(animExitTimer < 0 && grounded){
 			if(anim.GetBool("jumping")){
 				anim.SetBool ("jumping",false);
 			}
 			anim.SetFloat("Speed",currentHorSpeed);
-			float loclXScale = transform.localScale.x;
 			if(InputSpeed>0&&loclXScale>0||InputSpeed<0&&loclXScale<0){
 				if(currentHorSpeed>0.1f){
 					Flip(false);
-					anim.SetBool("walking",true);
 				}else if (currentHorSpeed<-0.1f){
 					Flip(true);
-					anim.SetBool("walking",true);
-				}else{
-					anim.SetBool("walking",false);
 				}
 			}
+			if (currentHorSpeed<=0.1f&&currentHorSpeed>=-0.1f){
+				anim.SetBool("walking",false);
+			}else{
+				anim.SetBool("walking",true);
+			}
 		}else{
-			if(anim.GetBool("jumping")){
+			if(anim.GetBool("jumping")||(InputSpeed>0&&loclXScale>0||InputSpeed<0&&loclXScale<0)){
 				if(currentHorSpeed>0.1f){
 					Flip(false);
 				}else if (currentHorSpeed<-0.1f){
