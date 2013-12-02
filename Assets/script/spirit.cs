@@ -36,7 +36,7 @@ public class spirit : WalkingChar {
 			}
 
 			transform.localScale = new Vector3(-1 * countdown * scaleStart, countdown * scaleStart, 1);
-			if (countdown <= 1) {
+			if (countdown <= 2) {
 				timing = false;
 			} else {
 				timing = true;
@@ -64,7 +64,7 @@ public class spirit : WalkingChar {
 
 	IEnumerator CoroutineScaleUp () {
 		if (scale) {
-			countdown += Time.deltaTime * 10;
+			countdown += Time.deltaTime * 100;
 			transform.localScale = new Vector3(-1 * countdown * scaleStart, countdown * scaleStart, 1);
 
 			yield return new WaitForSeconds(3f);
@@ -78,7 +78,7 @@ public class spirit : WalkingChar {
 		ApplyMaxMoveSpeed();
 		ApplySlowdown();
 		if (inTrigger) {
-			Walk(countdown);
+			Walk(countdown - 2);
 		}
 		//animate
 		anim.SetBool("walking",timing);
@@ -92,7 +92,11 @@ public class spirit : WalkingChar {
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.tag == "walkpath") {
 			inTrigger = true;
-		} 
+		}
+
+		if (col.tag == "tiki") {
+			Application.LoadLevel(2);
+		}
 	}
 
 	void OnTriggerExit2D (Collider2D col) {
