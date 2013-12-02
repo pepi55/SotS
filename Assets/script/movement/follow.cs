@@ -9,6 +9,7 @@ public class follow : MonoBehaviour {
 			gameObject.transform.position = target.position+ Vector3.up+new Vector3(-0.5f,0,0);
 		}else{
 			Debug.Log("no target found");
+			GameObject.Destroy(gameObject);
 		}
 	}
 }

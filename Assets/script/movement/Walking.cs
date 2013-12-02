@@ -7,6 +7,9 @@ public class WalkingChar :Living
 	public float slowDownHorGround = 0.1f;
 	public int maxSpeed = 4;
 	public int moveHorForce = 20;
+	
+	private float xForceToApply = 0;
+	private float updatesToApplyForce = 0;
 
 	//slowdown
 	public void ApplySlowdown ()
@@ -33,6 +36,20 @@ public class WalkingChar :Living
 			newScale.x = -1;
 		}
 		transform.localScale = newScale;
+	}
+	
+	public void applyXforceOverTime(float force,float updates){
+		xForceToApply += force;
+		updatesToApplyForce = updates;
+	}
+	
+	public void applyXUpdate(){
+		if(xForceToApply>0||xForceToApply<0){
+			float xForce = Mathf.Lerp(xForceToApply,0,updatesToApplyForce);
+			xForceToApply -= xForce;
+			updatesToApplyForce -=0.02f;
+			rigidbody2D.AddForce( new Vector2( xForce,0));
+		}
 	}
 }
 

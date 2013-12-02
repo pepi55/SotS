@@ -10,13 +10,13 @@ public class enemyGroundMove :WalkingChar {
 	private int agroDistance = 5;
 	private Object hitObject;
 	public bool walkLeft = true;
-	float hitExitTimer = 0;
-	bool hitForceToApply = false;
+	private float hitExitTimer = 0;
+	private bool hitForceToApply = false;
 	new private void Start () {
 		sprite =GetComponent<SpriteRenderer>();
 		anim = GetComponent<Animator>();
-		playerTrans = GameObject.FindWithTag ("Player").transform;
-		player = GameObject.FindGameObjectWithTag("Player");
+		playerTrans = GameObject.Find("Player").transform;
+		player = GameObject.Find("Player");
 		base.Start();
 		base.spawnHealtBar();
 	}
@@ -88,9 +88,9 @@ public class enemyGroundMove :WalkingChar {
 				if(hitObject.name=="Player"){
 					player.GetComponent<PlayerMove>().ChangeHealt(-5);
 					if(xDistance>0){
-						player.rigidbody2D.AddForce(new Vector2(500,0));
+						player.GetComponent<WalkingChar>().applyXforceOverTime(4000,1);
 					}else{
-						player.rigidbody2D.AddForce(new Vector2(-500,0));
+						player.GetComponent<WalkingChar>().applyXforceOverTime(-4000,1);
 					}
 				}
 			}
@@ -98,6 +98,14 @@ public class enemyGroundMove :WalkingChar {
 
 		ApplySlowdown();
 		ApplyMaxMoveSpeed();
+		applyXUpdate();
+
+		if(GetComponent<Living>().Health<0){
+			GameObject.Instantiate( Resources.Load("spiritParticle"),transform.position,Quaternion.identity);
+			GameObject deathEffect = (GameObject)GameObject.Instantiate( Resources.Load("deathSmall"),transform.position,Quaternion.identity);
+			deathEffect.rigidbody2D.AddForce(new Vector2(0,150));
+			GameObject.Destroy(gameObject);
+		}
 	}
 	
 	private void OnTriggerEnter2D(Collider2D col){
@@ -110,9 +118,5 @@ public class enemyGroundMove :WalkingChar {
 		if(col.collider.collider2D.tag == "enemy"){
 			walkLeft = !walkLeft;
 		}
-	}
-
-	public void OnDestroy () {
-		Resources.Load("spiritParticle");
 	}
 }

@@ -2,10 +2,20 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\camera\Parallax.cs">
     <Files>
+<<<<<<< HEAD
       <File FileName="Assets\script\camera\Parallax.cs" Line="1" Column="1" />
       <File FileName="Assets\script\camera\Parallax.cs" Line="1" Column="1" />
       <File FileName="Assets\script\player\PlayerMove.cs" Line="1" Column="1" />
       <File FileName="Assets\script\camera\Values.cs" Line="1" Column="1" />
+=======
+      <File FileName="Assets\script\player\PlayerMove.cs" Line="99" Column="43" />
+      <File FileName="Assets\script\player\PlayerMove.cs" Line="233" Column="1" />
+      <File FileName="Assets\script\enemyGroundMove.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\spirit.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\movement\Walking.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\Living.cs" Line="1" Column="1" />
+      <File FileName="Assets\script\movement\camera.cs" Line="37" Column="23" />
+>>>>>>> a893248b6fc8beac623f468e80f4e66e3a8b7806
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
