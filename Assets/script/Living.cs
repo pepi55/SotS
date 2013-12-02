@@ -15,15 +15,12 @@ public class Living : MonoBehaviour {
 		HealthStart = Health;
 		if(gameObject.name=="Player"){
 			lifeUI = GameObject.Find("LifeBarFill").GetComponent<SpriteRenderer>();
-			//widthBar = lifeUI.sprite.textureRect.width;
 		}
 	}
 
 	public void spawnHealtBar(){
 		Bar = Instantiate(liveBar,transform.position,Quaternion.identity) as GameObject;
 		Bar.GetComponent<follow>().target = gameObject.transform;
-		//Bar.transform.parent = gameObject.transform;
-		//Bar.transform.Translate( new Vector3(0,1,0));
 		thisBar = Bar.transform.Find("LifeBarFill");
 	}
 

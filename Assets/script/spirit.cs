@@ -28,7 +28,7 @@ public class spirit : WalkingChar {
 		if (timing) {
 			countdown -= Time.deltaTime / 2;
 
-			transform.localScale = new Vector3(-1*countdown*scaleStart, countdown*scaleStart, 1);
+			transform.localScale = new Vector3(-1 * countdown * scaleStart, countdown * scaleStart, 1);
 			if (countdown <= 1) {
 				timing = false;
 			} else {
@@ -48,17 +48,22 @@ public class spirit : WalkingChar {
 				timing = false;
 				scale = true;
 
+				StartCoroutine(CoroutineScaleUp());
+
 				Destroy(spiritParticle);
 			}
 		}
+	}
 
+	IEnumerator CoroutineScaleUp () {
 		if (scale) {
-			//countdown += Time.deltaTime / 2;
-			//transform.localScale = new Vector3(countdown, countdown + 2, 1);
-			countdown += 3;
+			countdown += Time.deltaTime * 10;
+			transform.localScale = new Vector3(-1 * countdown * scaleStart, countdown * scaleStart, 1);
 
-			timing = true;
+			yield return new WaitForSeconds(3f);
+
 			scale = false;
+			timing = true;
 		}
 	}
 
