@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerMove : WalkingChar {
 	public AudioClip attackSound;
+	public AudioClip[] walkSounds;
+	private int WalkSoundTimer;
 
 	private SpriteRenderer sprite;
 	public int jumpForce = 800;
@@ -33,11 +35,15 @@ public class PlayerMove : WalkingChar {
 		sprite =GetComponent<SpriteRenderer>();
 		//call Start methode in the base class
 		base.Start();
-
 		base.spawnHealtBar();
 	}
 	
 	private void Update (){
+		//load game over screen
+		if (Health<0){
+			Application.LoadLevel(3);
+		}
+	
 		bool spaceKey = Input.GetButtonDown("Jump");
 
 		//check if can jump and if on ground
@@ -122,16 +128,27 @@ public class PlayerMove : WalkingChar {
 			animExitTimer -= Time.deltaTime;
 		}
 		SpawnParticles();
+		playWalkSound();
+	}
+	private void playWalkSound(){
+		if(grounded&&Mathf.Abs(currentHorSpeed)>1){
+			
+			WalkSoundTimer++;
+			if(WalkSoundTimer>6){
+				WalkSoundTimer = 0;
+				int randonSound = Random.Range(0,5);
+				audio.PlayOneShot(walkSounds[randonSound],0.25f);
+			}
+		}
 	}
 	
 	private void SpawnParticles(){
 		if(grounded){
 			int random = Random.Range(0,3);
 			if(random==1){
-				float speed = Mathf.Abs( rigidbody2D.velocity.x );
 				Vector2 partSpeed = new Vector2(-rigidbody2D.velocity.x*2,0 );
 				int randomPart = Random.Range(0,particles.Length);
-				if(speed>1){
+				if(Mathf.Abs(currentHorSpeed)>1){
 					GameObject newPart = GameObject.Instantiate(particles[randomPart],dustSpawn.position,Quaternion.identity) as GameObject;
 					newPart.rigidbody2D.AddForce(partSpeed);
 				}
@@ -164,9 +181,7 @@ public class PlayerMove : WalkingChar {
 	private void attackHit(){
 		audio.PlayOneShot(attackSound,0.4f);
 		attackToDo = false;
-		bool foundHit = true;
 		//	calculate hit area
-		//while(foundHit){
 		float hitLeftTopX = 0;
 		float hitLeftTopY = transform.position.y + (attackAreaHeight/2);
 		float hitBottomRightX = 0;

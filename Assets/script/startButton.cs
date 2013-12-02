@@ -3,6 +3,6 @@ using System.Collections;
 
 public class startButton : MonoBehaviour {
 	void OnMouseDown () {
-		Application.LoadLevel(1);
+		Application.LoadLevel("level1");
 	}
 }
