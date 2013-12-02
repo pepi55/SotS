@@ -90,7 +90,7 @@ public class PlayerMove : WalkingChar {
 		if(attackKey && animExitTimer < 0){
 			attackStart();
 		}
-		if(attackToDo && animExitTimer<0.2f){
+		if(attackToDo && animExitTimer<0.65f){
 			attackHit();
 		}
 		float loclXScale = transform.localScale.x;
@@ -162,7 +162,7 @@ public class PlayerMove : WalkingChar {
 	}
 
 	private void attackHit(){
-		audio.PlayOneShot(attackSound);
+		audio.PlayOneShot(attackSound,0.4f);
 		attackToDo = false;
 		bool foundHit = true;
 		//	calculate hit area
