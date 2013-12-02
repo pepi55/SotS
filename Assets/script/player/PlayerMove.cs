@@ -41,7 +41,7 @@ public class PlayerMove : WalkingChar {
 	private void Update (){
 		//load game over screen
 		if (Health<0){
-			Application.LoadLevel(3);
+			Application.LoadLevel(2);
 		}
 	
 		bool spaceKey = Input.GetButtonDown("Jump");

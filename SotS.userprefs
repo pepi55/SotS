@@ -1,23 +1,11 @@
 ﻿<Properties>
-<<<<<<< HEAD
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\startButton.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\spirit.cs">
     <Files>
-      <File FileName="SotS.sln" Line="1" Column="1" />
-      <File FileName="Assets\script\Living.cs" Line="16" Column="30" />
-      <File FileName="Assets\script\player\PlayerMove.cs" Line="183" Column="22" />
-      <File FileName="Assets\script\enemyGroundMove.cs" Line="5" Column="2" />
-      <File FileName="Assets\script\startButton.cs" Line="6" Column="25" />
-      <File FileName="Assets\script\movement\follow.cs" Line="17" Column="1" />
-      <File FileName="Assets\script\spirit.cs" Line="68" Column="30" />
-=======
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\script\instructionsButton.cs">
-    <Files>
-      <File FileName="Assets\script\startButton.cs" Line="5" Column="2" />
-      <File FileName="Assets\script\creditsButton.cs" Line="6" Column="26" />
-      <File FileName="Assets\script\instructionsButton.cs" Line="6" Column="26" />
->>>>>>> 714939c38ef5d5e8a188f62c390fdacc0b4690cc
+      <File FileName="Assets\script\player\PlayerMove.cs" Line="251" Column="1" />
+      <File FileName="Assets\script\spirit.cs" Line="67" Column="24" />
+      <File FileName="Assets\script\deathAnimation.cs" Line="9" Column="9" />
+      <File FileName="Assets\script\enemyGroundMove.cs" Line="128" Column="49" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

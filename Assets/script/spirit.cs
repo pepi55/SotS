@@ -64,8 +64,8 @@ public class spirit : WalkingChar {
 
 		if (countdown <= 2 && timing == false) {
 			deathTimer += Time.deltaTime;
-			if (deathTimer >= 5) {
-				Application.LoadLevel(3);
+			if (deathTimer >= 10) {
+				Application.LoadLevel(2);
 			}
 		} else {
 			deathTimer = 0;

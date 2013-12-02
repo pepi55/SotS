@@ -125,7 +125,7 @@ public class enemyGroundMove :WalkingChar {
 			if(hitForceToApply){
 				hitForceToApply = false;
 				if(hitObject.name=="spirit"){
-					spirit.GetComponent<spirit>().enemyHit += 30;
+					spirit.GetComponent<spirit>().enemyHit += 5;
 				}
 				if(hitObject.name=="Player"){
 					player.GetComponent<PlayerMove>().ChangeHealt(-5);

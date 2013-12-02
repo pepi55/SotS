@@ -6,7 +6,7 @@ public class deathAnimation : MonoBehaviour {
 	private SpriteRenderer img;
 
 	void Start () {
-		img =GetComponent<SpriteRenderer>();
+		img = GetComponent<SpriteRenderer>();
 	}
 
 }
