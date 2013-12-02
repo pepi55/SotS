@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 
 public class PlayerMove : WalkingChar {
+	public AudioClip attackSound;
+
 	private SpriteRenderer sprite;
 	public int jumpForce = 800;
 	public GameObject[] particles;
@@ -160,6 +162,7 @@ public class PlayerMove : WalkingChar {
 	}
 
 	private void attackHit(){
+		audio.PlayOneShot(attackSound);
 		attackToDo = false;
 		bool foundHit = true;
 		//	calculate hit area
