@@ -4,6 +4,7 @@ using System.Collections;
 public class spirit : WalkingChar {
 	public float time;
 	public float scaleStart = 0.5f;
+	public float enemyHit;
 
 	bool timing;
 	bool inTrigger = false;
@@ -21,12 +22,18 @@ public class spirit : WalkingChar {
 
 	new void Start () {
 		anim = GetComponent<Animator>();
+		anim.speed = 2;
 		StartTimer();
 	}
 
 	void Update () {
 		if (timing) {
-			countdown -= Time.deltaTime / 2;
+			if (enemyHit <= 0) {
+				countdown -= Time.deltaTime / 2;
+			} else {
+				enemyHit -= Time.deltaTime;
+				countdown -= (Time.deltaTime / 2) * 3;
+			}
 
 			transform.localScale = new Vector3(-1 * countdown * scaleStart, countdown * scaleStart, 1);
 			if (countdown <= 1) {
