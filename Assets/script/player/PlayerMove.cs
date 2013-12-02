@@ -69,6 +69,7 @@ public class PlayerMove : WalkingChar {
 		//move horizontal
 		Walk(h);
 		ApplyMaxMoveSpeed();
+		applyXUpdate();
 		//slowdown horizontal
 		if(h==0){
 			if(grounded){
@@ -87,7 +88,7 @@ public class PlayerMove : WalkingChar {
 		if(attackKey && animExitTimer < 0){
 			attackStart();
 		}
-		if(attackToDo && animExitTimer<0.3f){
+		if(attackToDo && animExitTimer<0.2f){
 			attackHit();
 		}
 
@@ -96,14 +97,17 @@ public class PlayerMove : WalkingChar {
 				anim.SetBool ("jumping",false);
 			}
 			anim.SetFloat("Speed",currentHorSpeed);
-			if(currentHorSpeed>0.1f){
-				Flip(false);
-				anim.SetBool("walking",true);
-			}else if (currentHorSpeed<-0.1f){
-				Flip(true);
-				anim.SetBool("walking",true);
-			}else{
-				anim.SetBool("walking",false);
+			float loclXScale = transform.localScale.x;
+			if(InputSpeed>0&&loclXScale>0||InputSpeed<0&&loclXScale<0){
+				if(currentHorSpeed>0.1f){
+					Flip(false);
+					anim.SetBool("walking",true);
+				}else if (currentHorSpeed<-0.1f){
+					Flip(true);
+					anim.SetBool("walking",true);
+				}else{
+					anim.SetBool("walking",false);
+				}
 			}
 		}else{
 			if(anim.GetBool("jumping")){
@@ -181,9 +185,11 @@ public class PlayerMove : WalkingChar {
 			float thisObjPosX = transform.position.x;
 			float distHitObjX = thisObjPosX - hitObjPosX; 
 			if(distHitObjX>0){
-				hitObject.rigidbody2D.AddForce(new Vector2(-1000,0));
+				//hitObject.rigidbody2D.AddForce(new Vector2(-1000,0));
+				hitObject.GetComponent<WalkingChar>().applyXforceOverTime(-2500,0.9f);
 			}else{
-				hitObject.rigidbody2D.AddForce(new Vector2(1000,0));
+				//hitObject.rigidbody2D.AddForce(new Vector2(1000,0));
+				hitObject.GetComponent<WalkingChar>().applyXforceOverTime(2500,0.9f);
 			}
 			hitObject.GetComponent<Living>().Hit();
 		}

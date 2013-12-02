@@ -88,9 +88,9 @@ public class enemyGroundMove :WalkingChar {
 				if(hitObject.name=="Player"){
 					player.GetComponent<PlayerMove>().ChangeHealt(-5);
 					if(xDistance>0){
-						player.rigidbody2D.AddForce(new Vector2(500,0));
+						player.GetComponent<WalkingChar>().applyXforceOverTime(4000,1);
 					}else{
-						player.rigidbody2D.AddForce(new Vector2(-500,0));
+						player.GetComponent<WalkingChar>().applyXforceOverTime(-4000,1);
 					}
 				}
 			}
@@ -98,6 +98,7 @@ public class enemyGroundMove :WalkingChar {
 
 		ApplySlowdown();
 		ApplyMaxMoveSpeed();
+		applyXUpdate();
 
 		if(GetComponent<Living>().Health<0){
 			GameObject.Instantiate( Resources.Load("spiritParticle"),transform.position,Quaternion.identity);

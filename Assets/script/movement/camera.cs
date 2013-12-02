@@ -34,16 +34,18 @@ public class camera : MonoBehaviour
 		{
 			newYPos = Mathf.SmoothDamp(newPos.y, targetPos.y, ref velocity.y, smoothTime);
 		}
-		
-		if(newXPos <maxXpos && newXPos > minXpos){
-			//Update new X position
-			newPos = new Vector3(newXPos,newPos.y,newPos.z);
+		if(newXPos>maxXpos){
+			newXPos = maxXpos;
+		}else if(newXPos<minXpos){
+			newXPos = minXpos;
 		}
-		if(newYPos <maxYpos && newYPos > minYpos){
-			//Update new Y position
-			newPos = new Vector3(newPos.x,newYPos,newPos.z);
+		if(newYPos>maxYpos){
+			newYPos = maxYpos;
+		}else if(newYPos<minYpos){
+			newYPos = minYpos;
 		}
 		//Update camera position
+		newPos = new Vector3(newXPos,newYPos,newPos.z);
 		transform.position = newPos;
 	}
 }

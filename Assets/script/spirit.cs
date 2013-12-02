@@ -3,6 +3,7 @@ using System.Collections;
 
 public class spirit : WalkingChar {
 	public float time;
+	public float scaleStart = 0.5f;
 
 	bool timing;
 	bool inTrigger = false;
@@ -16,8 +17,10 @@ public class spirit : WalkingChar {
 
 	Transform target;
 	GameObject spiritParticle;
+	Animator anim;
 
 	new void Start () {
+		anim = GetComponent<Animator>();
 		StartTimer();
 	}
 
@@ -25,7 +28,7 @@ public class spirit : WalkingChar {
 		if (timing) {
 			countdown -= Time.deltaTime / 2;
 
-			transform.localScale = new Vector3(countdown, countdown + 2, 1);
+			transform.localScale = new Vector3(-1*countdown*scaleStart, countdown*scaleStart, 1);
 			if (countdown <= 1) {
 				timing = false;
 			} else {
@@ -65,6 +68,8 @@ public class spirit : WalkingChar {
 		if (inTrigger) {
 			Walk(countdown);
 		}
+		//animate
+		anim.SetBool("walking",timing);
 	}
 
 	void StartTimer () {
