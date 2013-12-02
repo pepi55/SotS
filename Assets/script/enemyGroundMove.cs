@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class enemyGroundMove :WalkingChar {
+	public AudioClip attackSound;
+
 	private SpriteRenderer sprite;
 	private Animator anim;
 	private bool facingLeft = true;
@@ -84,6 +86,8 @@ public class enemyGroundMove :WalkingChar {
 		//apply hitforce player
 		if(hitExitTimer < 0.4){
 			if(hitForceToApply){
+				audio.PlayOneShot(attackSound);
+				Debug.Log ("play sound");
 				hitForceToApply = false;
 				if(hitObject.name=="Player"){
 					player.GetComponent<PlayerMove>().ChangeHealt(-5);
