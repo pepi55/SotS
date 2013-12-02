@@ -12,6 +12,7 @@ public class spirit : WalkingChar {
 
 	float countdown = 0;
 	float distance;
+	float deathTimer;
 
 	Vector3 positionThis;
 	Vector3 positionTarget;
@@ -59,6 +60,15 @@ public class spirit : WalkingChar {
 
 				Destroy(spiritParticle);
 			}
+		}
+
+		if (countdown <= 2 && timing == false) {
+			deathTimer += Time.deltaTime;
+			if (deathTimer >= 5) {
+				Application.LoadLevel(3);
+			}
+		} else {
+			deathTimer = 0;
 		}
 	}
 
