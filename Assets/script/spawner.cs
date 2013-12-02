@@ -10,12 +10,9 @@ public class spawner : MonoBehaviour {
 	void FixedUpdate () {
 		timer++;
 		if(timer%spawnSec==0){
-		for (int i = 0; i<1 ;i++){
-			Instantiate(spawnOject, transform.position, Quaternion.identity) ;
+			for (int i = 0; i<1 ;i++){
+				Instantiate(spawnOject, transform.position, Quaternion.identity) ;
+			}
 		}
-		}
-		//if(timer%10==0){
-			//Debug.Log(timer*10);
-		//}
 	}
 }
